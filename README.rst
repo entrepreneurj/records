@@ -1,10 +1,7 @@
 Records: SQL for Humans™
 ========================
 
-.. image:: https://travis-ci.org/kennethreitz/records.svg?branch=master
-    :target: https://travis-ci.org/kennethreitz/records
-
-.. image:: https://github.com/entrepreneurj/records/workflows/Python%20application/badge.svg?branch=master
+.. image:: https://github.com/entrepreneurj/records/workflows/entrepreneurj\/records/badge.svg?branch=master
     :target: https://github.com/entrepreneurj/records/actions
 
 
@@ -128,8 +125,8 @@ Excellent for sharing data with friends, or generating reports.
 
     with open('report.xls', 'wb') as f:
         f.write(rows.export('xls'))
-        
-        
+
+
 **Pandas DataFrame**
 
 .. code:: python
@@ -148,7 +145,7 @@ for more details.
 ☤ Installation
 --------------
 
-Of course, the recommended installation method is `pipenv <http://pipenv.org>`_::
+Of course, the recommended installation method is `pipenv <https://pipenv-fork.readthedocs.io/>`_::
 
     $ pipenv install records[pandas]
     ✨🍰✨
@@ -167,6 +164,6 @@ included. Here's a screenshot of the usage information:
 
 Thanks for checking this library out! I hope you find it useful.
 
-Of course, there's always room for improvement. Feel free to `open an issue <https://github.com/kennethreitz/records/issues>`_ so we can make Records better, stronger, faster.
+This is a fork of `Records created by Ken Reitz <https://github.com/kennethreitz/records>`_ all credit goes to him and his fellow contributors for providing the functionality in this package.
 
 

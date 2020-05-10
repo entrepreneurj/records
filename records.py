@@ -259,10 +259,13 @@ class Database(object):
         # Create an engine.
         self._engine = create_engine(self.db_url, **kwargs)
         self.open = True
+        # Create a connection
+        self._conn = None
 
     def close(self):
         """Closes the Database."""
         self._engine.dispose()
+        self._conn.close()
         self.open = False
 
     def __enter__(self):
@@ -287,7 +290,10 @@ class Database(object):
         if not self.open:
             raise exc.ResourceClosedError('Database closed.')
 
-        return Connection(self._engine.connect())
+        if not self._conn:
+            self._conn = Connection(self._engine.connect())
+
+        return self._conn
 
     def query(self, query, fetchall=False, **params):
         """Executes the given SQL query against the Database. Parameters can,
