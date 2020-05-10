@@ -3,9 +3,9 @@
 
 name: entrepreneurj/records
 
-on: 
-- pull_request
-- push:
+on:
+  pull_request:
+  push:
     branches: [ master ]
 
 jobs:
