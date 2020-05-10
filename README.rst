@@ -1,16 +1,11 @@
 Records: SQL for Humans™
 ========================
 
-
-.. image:: https://img.shields.io/pypi/v/records.svg
-    :target: https://pypi.python.org/pypi/records
-
 .. image:: https://travis-ci.org/kennethreitz/records.svg?branch=master
     :target: https://travis-ci.org/kennethreitz/records
 
-.. image:: https://img.shields.io/badge/SayThanks.io-☼-1EAEDB.svg
-    :target: https://saythanks.io/to/kennethreitz
-
+.. image:: https://github.com/entrepreneurj/records/workflows/Python%20application/badge.svg?branch=master
+    :target: https://github.com/entrepreneurj/records/actions
 
 
 **Records is a very simple, but powerful, library for making raw SQL queries
