@@ -4,6 +4,7 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "*"
+pylint = "*"
 
 [packages]
-"e1839a8" = {path = ".", extras = [], editable = true}
+e1839a8 = {path = ".",extras = [],editable = true}

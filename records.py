@@ -291,7 +291,10 @@ class Database(object):
         """
         if not self.open:
             raise exc.ResourceClosedError('Database closed.')
-
+        if self._conn and not self._conn.open:
+            # If we have a connection but it is closed, remove it so
+            # we can open a new connection
+            self._conn = None
         if not self._conn:
             self._conn = Connection(self._engine.connect())
 
