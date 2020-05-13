@@ -100,10 +100,12 @@ class Record(object):
 
 class RecordCollection(object):
     """A set of excellent Records from a query."""
-    def __init__(self, rows):
+    def __init__(self, rows, cursor = None):
         self._rows = rows
         self._all_rows = []
         self.pending = True
+        # Exposes the underlying cursor for additional information
+        self._cursor = cursor
 
     def __repr__(self):
         return '<RecordCollection size={} pending={}>'.format(len(self), self.pending)
@@ -371,8 +373,9 @@ class Connection(object):
         # Row-by-row Record generator.
         row_gen = (Record(cursor.keys(), row) for row in cursor)
 
-        # Convert psycopg2 results to RecordCollection.
-        results = RecordCollection(row_gen)
+
+        # Convert psycopg2 results to RecordCollection
+        results = RecordCollection(row_gen, cursor=cursor)
 
         # Fetch all results if desired.
         if fetchall:
